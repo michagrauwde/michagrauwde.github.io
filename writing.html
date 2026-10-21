@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing | Michael Grauwde</title>
+<meta name="description" content="Writing by Michael Grauwde.">
+<style>
+  /* Layout: same plain look as the home page. One column, newest piece first. */
+  :root {
+    --bg: #fcfcfb;
+    --fg: #1f2328;
+    --muted: #626a73;
+    --rule: #dcdfe3;
+    --accent: #1d4ca8;
+    --accent-soft: #e8eefb;
+    --font: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16181b;
+      --fg: #e6e8ea;
+      --muted: #9aa2ab;
+      --rule: #2d3238;
+      --accent: #8fb3ff;
+      --accent-soft: #1f2a40;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16181b;
+    --fg: #e6e8ea;
+    --muted: #9aa2ab;
+    --rule: #2d3238;
+    --accent: #8fb3ff;
+    --accent-soft: #1f2a40;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    padding-block: 2.5rem 4rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  main { max-width: 38rem; margin: 0 auto; }
+
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  a:hover { background: var(--accent-soft); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .back { margin: 0 0 1.5rem; color: var(--muted); font-size: 1rem; }
+  h1 { font-size: 1.9rem; line-height: 1.15; margin: 0 0 0.25rem; font-weight: 700; letter-spacing: -0.01em; }
+  .intro { margin: 0 0 1rem; color: var(--muted); font-style: italic; }
+
+  /* One piece of writing */
+  article { padding-top: 2.25rem; margin-top: 2.25rem; border-top: 1px solid var(--rule); }
+  article h2 { font-size: 1.4rem; line-height: 1.25; margin: 0 0 0.25rem; font-weight: 700; text-wrap: balance; }
+  .meta { margin: 0 0 1.25rem; color: var(--muted); font-size: 1rem; }
+  article p { margin: 0 0 1.1rem; text-wrap: pretty; }
+  article h3 { font-size: 1.1rem; margin: 1.75rem 0 0.5rem; }
+  article blockquote { margin: 0 0 1.1rem; padding-left: 1rem; border-left: 3px solid var(--rule); color: var(--muted); }
+  article ul, article ol { margin: 0 0 1.1rem; }
+  article img { max-width: 100%; height: auto; }
+
+  footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.95rem; }
+
+  @media (max-width: 480px) {
+    body { padding-block: 1.75rem 3rem; }
+    h1 { font-size: 1.6rem; }
+    article h2 { font-size: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!--
+    HOW TO ADD A PIECE
+    1. Copy everything from <article> to </article> below.
+    2. Paste it directly under the line that says "NEWEST PIECE GOES HERE".
+    3. Change the id, the title, the date and the text.
+    Each paragraph goes between <p> and </p>. The id must be one word with no spaces
+    (for example id="my-essay"). Then the piece has its own link: yoursite/writing.html#my-essay
+  -->
+
+  <p class="back"><a href="index.html">&larr; Home</a></p>
+
+  <h1>Writing</h1>
+  <!-- EDIT: one line about what you write -->
+  <p class="intro">Essays, articles and notes.</p>
+
+  <!-- NEWEST PIECE GOES HERE -->
+  <article id="first-example">
+    <h2>Sovereignty and Thucydides: That the strong do what they can, and the weak suffer what they must</h2>
+    <p class="meta">19 August 2026</p>
+    <figure>
+    <img src="littleblackboy.jpg" alt="William Burke's Little Black Boy painting depicting a black child with a white child.">
+    <figcaption>William Burke's Little Black Boy.</figcaption>
+    </figure>
+    <p>Sovereignty has taken up space in the geopolitical debate once again. But now, this discussion, has reached richer countries, often countries that are allies of the U.S.A. This was a discussion in the 20th century that was more focused on developing countries in the post-colonial world. However, due to the Trump presidency, countries like Canada and South Korea which are trusted allies of the U.S.A. have felt threatened by the U.S.A. This discussion was blown into the geopolitical discourse by Prime Minister Mark Carney at Davos in 2026. He spoke about what the Greek historian, Thucydides stated,</p>
+    <blockquote><p>That the strong do what they can, and the weak suffer what they must.</p></blockquote>
+    <h3>Vassals</h3>
+    <p>This is supposed to be a doctrine of realism in International Relations. Yet, what Carney seemed to somehow discover about the world and what many have recently discovered is that they now were just on the other side. They are not used to receiving such treatment. They normally didn’t have to think about things such as sovereignty in such sense. In many senses of the word, many European countries have been described as being vassals of the U.S.A.
+      This is due to the large military, economic, and technological dependence that comes from that country across the Atlantic with European capitals often racing to follow behind their heels. Carney does not over look the benefits that being such close partners to the U.S.A. gave the Canadians, rather what he said was that they participated and did not call out the “gaps” in the bargain that they were participating in. Carney has now started pointing out the gaps and in many ways was elected due to his opposition of the President of the U.S.A. Carney’s presentation of realism is something that has been prevalent in the developing world for long period of time. The weak suffered what they must. </p>
+    <h3>The reality of Thucydides</h3>
+    <figure>
+    <img src="Thucydides.jpg" alt="A mosaic of Thucydides.">
+    <figcaption>Thucydides.</figcaption>
+    </figure>
+    <p>A most recent development of this was during the Covid-19 pandemic where richer countries bought enough vaccines to vaccinate their populations many times over before poorer countries could buy any. This inevitably would lead to more deaths in those poorer countries. Furthermore, poorer countries such as South Africa paid more than richer countries for access to vaccines. This is the definition of what Carney was speaking of, the weak suffered what they must. The realist idea here has simply spread to Carney’s Canada through threat of annexation, it has become real. The weak, in this case Canada is attempting to prevent this suffering. </p>
+    <h3>Multi-laterals</h3>
+    <p>Where many in the world have lost hope in the U.N. I’d argue that the U.N. is one of the places that equals the playing field. That gives the weak a place to say their piece. Some say it is just talk, but it means something that a country as small as Tuvalu with 10,643 can be represent at the U.N. Can say that Tuvalu is dealing with sea level rise so harsh due to climate change that it may wipe out the entire island. Such a country can stand up and say something and it be taken seriously. We need more multilateral organizations because realism leads to continuing inequities and death in many of these weaker countries. Furthermore, some of these weaker countries, when they have any semblance of power, will turn to the weapon of all weapons to protect themselves as to not suffer. A world where every world leader has their finger on the edge of pressing a button is no world we would want to live in.
+      Our current problems that will extend into the future such as climate change, poverty, water and food shortages are problems that will need cooperation to solve. Cooperation is in fact one of the things that humans do best when we put our minds to it. We need more multilateral organizations and we need to give them teeth We need treaties to protect us from the law of the jungle. If anything, they last 12 years have been proof of just that.
+      Let’s also hope that sovereignty is truly taken seriously when it comes to all countries, not just the ones of certain allies. </p>
+  </article>
+  
+  <article id="second-example">
+    <!-- EDIT: title, date, where it was published (or delete the second part of the meta line) -->
+    <h2>Overspecialization</h2>
+    <p class="meta">12 July 2026 &middot; First published on Substack <a href="#">Mundane Wonders</a></p>
+    <p>I recently re-read Henry James’ essay, “The Ph.D. Octopus”. Since I started my Ph.D., I find that this is an essay that I constantly find myself returning to. If I can allow myself to think about the role of intellectuals and public intellectuals and the denigration of such characters to mere podcast guests nowadays, the allure has seem to be taken away. What has replaced this is a seemingly unending cacophony of voices that seem to have no idea of what they are speaking about but believe that they have the right to speak simply because they have the letters, “P”, “H”, and “D” behind their name. James speculated on what overspecialisation and reliance on credentials would do to intellectuals and to public life. Of that, I have the same concern. On the worst of days, we open whatever social media channels or television channels or podcasts and find characters proclaiming to know something based on their so-called experience or knowledge. And we trust them, because of those three letters I mentioned earlier. But it seems foolish to look to someone with a Ph.D. in Computer Science to explain the minutiae of economics or look to a biologist to examine the mechanics of aerospace engineering, or the constantly egregious line of intellectuals that feel that their knowledge or overspecialisation in whatever topic they research, gives them the ability to have valuable opinions in political discourse.<p>.
+    <p>What I find fascinating in this overspecialisation is that a lot of individuals have earned the right to be extremely knowledgeable in their one field. However, the allure of fame, money, and whatever else, has allowed them to espouse their opinions in fields that they seemingly have no idea about, much less have thought about. It seems very difficult for people simply to understand what they don’t know. We can’t expect to know everything. It’s an impossible task, and those we proclaim to be the “smartest” in our society continue to adopt ridiculous ideas with no factual basis in reality. I have no desire to name names here, but I think you’re already thinking of a few. Now, here, some people may say, “Hey, what gives you the right to talk about this.” To that, I say, I have no right, besides my experience and my intrigue and curiosity that has led me across a number of various fields from behavioural science to the more technical fields of computer science. However, I often find that in these fields or these positions from their seats in ivory towers have the ability to simply say things and allow those ideas to be taken to heart because those letters that are behind them. It’s ridiculous hubris that we have allowed it to seep into our culture and into the life of the intellectual. We embark on education to become better critical thinkers. If those who have gained such status cannot engage in their own sets of critical thinking before they embark on a field they have never examined before, simply because they feel that their intellect should allow their opinions to be held in high regard, we should be there to hold them to account for when they simply say ridiculous things in the search for clout. We should call them out on their hubris..</p>
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Michael Grauwde. <a href="index.html">Home</a></p>
+  </footer>
+
+</main>
+</body>
+</html>
