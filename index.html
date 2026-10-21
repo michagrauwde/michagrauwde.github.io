@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Grauwde</title>
+<meta name="description" content="Writing and research by Michael Grauwde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<style>
+  /* Layout: plain text on a plain page. Small photo and name at the top, then About, Publications (year on the left), Contact. */
+  :root {
+    --bg: #fcfcfb;
+    --fg: #1f2328;
+    --muted: #626a73;
+    --rule: #dcdfe3;
+    --accent: #1d4ca8;
+    --accent-soft: #e8eefb;
+ 
+    --font: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #16181b;
+      --fg: #e6e8ea;
+      --muted: #9aa2ab;
+      --rule: #2d3238;
+      --accent: #8fb3ff;
+      --accent-soft: #1f2a40;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #16181b;
+    --fg: #e6e8ea;
+    --muted: #9aa2ab;
+    --rule: #2d3238;
+    --accent: #8fb3ff;
+    --accent-soft: #1f2a40;
+    color-scheme: dark;
+  }
+ 
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    padding-block: 2.5rem 4rem;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  main { max-width: 38rem; margin: 0 auto; }
+ 
+  a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+  a:hover { background: var(--accent-soft); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+ 
+  /* Masthead */
+  .masthead { display: flex; align-items: center; gap: 1rem; }
+  .photo {
+    flex: none;
+    position: relative;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--accent-soft);
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-size: 1.25rem;
+    letter-spacing: 0.04em;
+  }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .masthead > div { min-width: 0; }
+  h1 { font-size: 1.9rem; line-height: 1.15; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  h1 a { color: inherit; text-decoration: none; }
+  h1 a:hover { background: transparent; }
+  .tagline { margin: 0.1rem 0 0; color: var(--muted); font-style: italic; }
+ 
+  .jump { margin: 1.25rem 0 0; color: var(--muted); }
+  .jump a { margin-right: 1rem; }
+ 
+  .topics { margin: 1rem 0 0; font-size: 1rem; color: var(--muted); }
+  .topics b { color: var(--fg); font-weight: 600; }
+ 
+  /* Sections */
+  h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 2.75rem 0 1rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  section p { margin: 0 0 1rem; text-wrap: pretty; }
+  .note { color: var(--muted); font-size: 1rem; }
+ 
+  .entries { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+  .entry { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: 0 0.75rem; }
+  .year { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .title { margin: 0; line-height: 1.4; font-weight: 700; overflow-wrap: anywhere; }
+  .venue { margin: 0.1rem 0 0; color: var(--muted); font-style: italic; font-size: 1rem; }
+  .status { margin: 0; color: var(--muted); }
+ 
+  .contact { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+  .contact li { display: grid; grid-template-columns: 5rem minmax(0, 1fr); gap: 0 0.75rem; }
+  .contact .k { color: var(--muted); }
+  .contact li > span:last-child, .contact a { overflow-wrap: anywhere; }
+ 
+  footer { margin-top: 3rem; color: var(--muted); font-size: 0.95rem; }
+ 
+  @media (max-width: 480px) {
+    body { padding-block: 1.75rem 3rem; }
+    h1 { font-size: 1.6rem; }
+    .entry { grid-template-columns: 1fr; }
+    .contact li { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- EDIT: search this file for the word EDIT. Each spot that needs your own details is marked. -->
+
+<nav class="topnav" aria-label="Sections">
+  <a href="#about">About</a>
+  <a href="#publications">Publications</a>
+  <a href="#contact">Contact</a>
+</nav>
+<p class="topics"><b>Frequent topics:</b> <a href="https://substack.com/@mundanewonders">Democracy</a>, <a href="https://substack.com/@mundanewonders">AI</a>, <a href="https://substack.com/@mundanewonders">Films</a></p>
+
+  <header>
+     
+      <!-- EDIT: your name and role -->
+      <p class="label">Writer and researcher</p>
+      <h1>Michael Grauwde</h1>
+      <nav class="links" aria-label="Profiles">
+        <!-- EDIT: the link to your blog -->
+        <a class="primary" href="https://substack.com/@mundanewonders" target="_blank" rel="noopener">Blog</a>
+        <!-- EDIT: the link to your papers, for example your Google Scholar profile -->
+        <a href="https://scholar.google.nl/citations?user=5wr7UTUAAAAJ&hl=en" target="_blank" rel="noopener">Papers</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about" aria-labelledby="about-heading">
+    <h2 class="label" id="about-heading">About</h2>
+    <!-- EDIT: two or three sentences about you and what you write about -->
+    <p class="about">I write about how AI systems impact meta-cognition. In particular, I explore the implications of large language models for human reasoning and decision-making. 
+      I look at how these systems impact and can be designed to support human thinking particularly reflection the context of deliberation. 
+      This page collects a selection of my work. More is on my blog and in my papers.</p>
+          <p>More of my writing is on <a href="https://substack.com/@mundanewonders" target="_blank" rel="noopener">my blog</a>, and the full list of papers is <a href="https://scholar.google.nl/citations?user=5wr7UTUAAAAJ&hl=en" target="_blank" rel="noopener">here</a>.</p>
+  </section>
+
+  <section aria-labelledby="writing-heading">
+    <h2 class="label" id="writing-heading">Selected writing</h2>
+    <ol class="entries">
+      <!-- EDIT: one <li> per piece. Copy a block to add more. Example entries, replace them. -->
+      <li class="entry">
+        <span class="year">2025</span>
+        <div>
+          <p class="title"><a href="#">Over-Researched and Under-Resourced: The ELSA Approach to Transdisciplinary AI Research in Low-Trust Neighbourhoods</a></p>
+          <p class="venue">Southern African Conference for Artificial Intelligence Research <span class="kind">Article</span></p>
+        </div>
+      </li>
+      <li class="entry">
+        <span class="year">2023</span>
+        <div>
+          <p class="title"><a href="#">Conversational agents for a deliberative age</a></p>
+          <p class="venue">Works-in-Progress and Demonstrations track, The Eleventh AAAI Conference on Human Computation and Crowdsourcing (HCOMP) Conference <span class="kind">Preprint</span></p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-heading">
+    <h2 class="label" id="contact-heading">Contact</h2>
+    <ul class="contact">
+      <!-- EDIT: your email, written out like this so spam bots cannot read it -->
+      <li><span class="label">Email</span><span> m.n.j.grauwde[at]tudelft[dot]nl</span></li>
+      <li><span class="label">Blog</span><a href="https://substack.com/@mundanewonders" target="_blank" rel="noopener">My Blog</a></li>
+      <li><span class="label">Papers</span><a href="https://scholar.google.nl/citations?user=5wr7UTUAAAAJ&hl=en" target="_blank" rel="noopener">My Papers</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p class="label">&copy; 2026 Michael Grauwde</p>
+  </footer>
+
+</main>
+
+<script>
+  // EDIT: put your ORCID iD between the quotes, for example "0000-0002-1825-0097".
+  // Leave it as it is to keep the example list above and fill it in by hand.
+  var ORCID_ID = "0009-0008-4883-2654";
+
+  (function () {
+    if (!ORCID_ID || ORCID_ID.indexOf("0000-0000") === 0) return;
+
+    var list = document.getElementById("pub-list");
+    var papersLink = "https://orcid.org/" + ORCID_ID;
+    list.innerHTML = "";
+    var loading = document.createElement("li");
+    loading.className = "status";
+    loading.textContent = "Loading publications from ORCID…";
+    list.appendChild(loading);
+
+    function nice(type) {
+      if (!type) return "";
+      var t = type.replace(/_/g, " ").toLowerCase();
+      return t.charAt(0).toUpperCase() + t.slice(1);
+    }
+
+    function linkFor(summary) {
+      var ids = (summary["external-ids"] && summary["external-ids"]["external-id"]) || [];
+      for (var i = 0; i < ids.length; i++) {
+        if (ids[i]["external-id-type"] === "doi" && ids[i]["external-id-value"]) {
+          return "https://doi.org/" + ids[i]["external-id-value"];
+        }
+      }
+      if (summary.url && summary.url.value) return summary.url.value;
+      return papersLink;
+    }
+
+    function entry(summary) {
+      var year = summary["publication-date"] && summary["publication-date"].year ? summary["publication-date"].year.value : "";
+      var title = summary.title && summary.title.title ? summary.title.title.value : "Untitled";
+      var venue = summary["journal-title"] ? summary["journal-title"].value : "";
+      var kind = nice(summary.type);
+
+      var li = document.createElement("li");
+      li.className = "entry";
+
+      var y = document.createElement("span");
+      y.className = "year";
+      y.textContent = year;
+
+      var box = document.createElement("div");
+      var p = document.createElement("p");
+      p.className = "title";
+      var a = document.createElement("a");
+      a.href = linkFor(summary);
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = title;
+      p.appendChild(a);
+
+      var v = document.createElement("p");
+      v.className = "venue";
+      v.appendChild(document.createTextNode(venue));
+      if (kind) {
+        var k = document.createElement("span");
+        k.className = "kind";
+        k.textContent = kind;
+        v.appendChild(k);
+      }
+
+      box.appendChild(p);
+      box.appendChild(v);
+      li.appendChild(y);
+      li.appendChild(box);
+      return { year: parseInt(year, 10) || 0, node: li };
+    }
+
+    fetch("https://pub.orcid.org/v3.0/" + encodeURIComponent(ORCID_ID) + "/works", { headers: { "Accept": "application/json" } })
+      .then(function (r) { if (!r.ok) throw new Error("ORCID " + r.status); return r.json(); })
+      .then(function (data) {
+        var groups = data.group || [];
+        var items = groups.map(function (g) { return entry(g["work-summary"][0]); });
+        items.sort(function (a, b) { return b.year - a.year; });
+        list.innerHTML = "";
+        if (!items.length) throw new Error("No works");
+        items.forEach(function (it) { list.appendChild(it.node); });
+      })
+      .catch(function () {
+        list.innerHTML = "";
+        var li = document.createElement("li");
+        li.className = "status";
+        li.appendChild(document.createTextNode("The list could not be loaded. See "));
+        var a = document.createElement("a");
+        a.href = papersLink;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.textContent = "my ORCID profile";
+        li.appendChild(a);
+        li.appendChild(document.createTextNode("."));
+        list.appendChild(li);
+      });
+  })();
+</script>
+</body>
+</html>
